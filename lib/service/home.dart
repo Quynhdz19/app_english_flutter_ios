@@ -1,149 +1,104 @@
 import 'package:flutter/material.dart';
 
-class Home extends StatelessWidget {
+import '../data/album.dart';
+import '../data/fetchalbum.dart';
+
+class Home extends StatefulWidget {
   const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<Album> _albums = [];
+  List<Album> _allAlbums = []; // Lưu trữ danh sách gốc
+
+  @override
+  void initState() {
+    super.initState();
+    fetchAlbum().then((value) {
+      setState(() {
+        _albums = value; // Gán giá trị ban đầu cho cả 2 danh sách
+        _allAlbums = value;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.black54,
+        appBar: AppBar(
+          title: Center(
+            child: Text(
+              'Reading Json',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+          ),
+          backgroundColor: Colors.blue,
+        ),
         body: Column(
           children: [
-            SizedBox(
-              height: 70,
-            ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text(
-                    'Good morning',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 25),
-                  ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Search...',
+                  hintStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(
-                  width: 120,
-                ),
-                Icon(
-                  Icons.notification_add_outlined,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Icon(
-                  Icons.access_time,
-                  color: Colors.white,
-                  size: 30,
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Icon(
-                  Icons.settings_outlined,
-                  color: Colors.white,
-                  size: 30,
-                )
-              ],
-            ),
-            Container(
-              margin: EdgeInsets.all(10),
-              child: Row(
-                children: [
-                  TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.white30,
-                        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                      ),
-                      child: Text(
-                        'Music',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
-                      )),
-                  SizedBox(
-                    width: 9,
-                  ),
-                  TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        backgroundColor: Colors.white30,
-                        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                      ),
-                      child: Text(
-                        'Podcasts & Shows',
-                        style: TextStyle(color: Colors.white, fontSize: 15),
-                      )),
-                ],
+                onChanged: (text) {
+                  text = text.toLowerCase();
+                  setState(() {
+                    // Dùng danh sách gốc để lọc
+                    _albums = _allAlbums.where((album) {
+                      var title = album.name_course?.toLowerCase() ?? '';
+                      return title.contains(text);
+                    }).toList();
+                  });
+                },
               ),
             ),
-
-
-
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-            //   children: [
-            //     Column(
-            //       children: [
-            //         IconButton(
-            //             onPressed: () {},
-            //             icon: Icon(
-            //               Icons.home_filled,
-            //               color: Colors.white,
-            //               size: 30,
-            //             )),
-            //         //SizedBox(height: 2,),
-            //         Text(
-            //           'Home',
-            //           style: TextStyle(
-            //             color: Colors.white,
-            //           ),
-            //         )
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         IconButton(
-            //             onPressed: () {},
-            //             icon: Icon(
-            //               Icons.search,
-            //               color: Colors.white,
-            //               size: 30,
-            //             )),
-            //         //SizedBox(height: 2,),
-            //         Text(
-            //           'Search',
-            //           style: TextStyle(
-            //             color: Colors.white,
-            //           ),
-            //         )
-            //       ],
-            //     ),
-            //     Column(
-            //       children: [
-            //         IconButton(
-            //             onPressed: () {},
-            //             icon: Icon(
-            //               Icons.my_library_music_outlined,
-            //               color: Colors.white,
-            //               size: 30,
-            //             )),
-            //         //SizedBox(height: 2,),
-            //         Text(
-            //           'Your library',
-            //           style: TextStyle(
-            //             color: Colors.white,
-            //           ),
-            //         )
-            //       ],
-            //     )
-            //   ],
-            // )
+            Expanded(
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                  childAspectRatio: 3 / 2,
+                ),
+                itemCount: _albums.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 32, 16, 32),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            _albums[index].id.toString(),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            _albums[index].name_course ?? '',
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold),
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                          )
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

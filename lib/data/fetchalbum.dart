@@ -1,9 +1,10 @@
 import 'dart:convert';
-import 'package:json/album.dart';
 import 'package:http/http.dart' as http;
 
+import 'album.dart';
+
 Future<List<Album>> fetchAlbum() async {
-  var url = "https://jsonplaceholder.typicode.com/albums";
+  var url = "http://100.25.213.121/api/getCourses";
   var response = await http.get(Uri.parse(url)); // Chuyển đổi đúng cách từ String thành Uri
   List<Album> albums = [];
 
