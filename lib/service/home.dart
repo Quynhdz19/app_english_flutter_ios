@@ -82,365 +82,68 @@ class Home extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.white30,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5))),
-                        child: Row(
-                          children: [
 
-                            SizedBox(
-                              width: 9,
-                            ),
-                            Text(
-                              'Chill Mix',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  SizedBox(
-                    width: 7,
-                  ),
-                  Expanded(
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.white30,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
-                      child: Row(
-                        children: [
 
-                          SizedBox(
-                            width: 9,
-                          ),
-                          Text(
-                            'Hot Hits Vietnam',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.white30,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5))),
-                        child: Row(
-                          children: [
 
-                            SizedBox(
-                              width: 9,
-                            ),
-                            Text(
-                              'Thien Ha Nghe Gi',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  SizedBox(
-                    width: 7,
-                  ),
-                  Expanded(
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.white30,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
-                      child: Row(
-                        children: [
-
-                          SizedBox(
-                            width: 9,
-                          ),
-                          Text(
-                            'Daily Mix 2',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                        onPressed: () {},
-                        style: TextButton.styleFrom(
-                            backgroundColor: Colors.white30,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5))),
-                        child: Row(
-                          children: [
-
-                            SizedBox(
-                              width: 9,
-                            ),
-                            Text(
-                              'Moody Mix',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        )),
-                  ),
-                  SizedBox(
-                    width: 7,
-                  ),
-                  Expanded(
-                    child: TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.white30,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(5))),
-                      child: Row(
-                        children: [
-
-                          SizedBox(
-                            width: 9,
-                          ),
-                          Text(
-                            'Top Songs-Vietnam',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 15,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 40, 10, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Picked for you',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Icon(
-                    Icons.more_horiz,
-                    color: Colors.white,
-                  )
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 20, 10, 0),
-              child: Stack(
-                children: [
-                  TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                          backgroundColor: Colors.white30,
-                          minimumSize: Size(double.infinity, 170),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(8))),
-                      child: Row(
-                        children: [
-                          SizedBox(
-                            width: 180,
-                          ),
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Playlist',
-                                style:
-                                TextStyle(color: Colors.grey, fontSize: 12),
-                              ),
-                              Text(
-                                'Ca Phe Quan Quen',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                              Text(
-                                'Mot minh trong quan, khuc nhac quen va',
-                                style: TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 12,
-                                ),
-                              ),
-                              SizedBox(
-                                height: 15,
-                              ),
-                              Row(
-                                children: [
-                                  Icon(
-                                    Icons.heart_broken,
-                                    color: Colors.green,
-                                    size: 40,
-                                  ),
-                                  SizedBox(
-                                    width: 140,
-                                  ),
-                                  Icon(
-                                    Icons.play_circle,
-                                    color: Colors.white,
-                                    size: 40,
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                height: 40,
-                              )
-                            ],
-                          )
-                        ],
-                      )),
-                  Positioned(
-                    left: 5,
-                    top: 140,
-                    child: Text(
-                      'Ca Phe Quan Quen',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 30, 10, 0),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Your top mixes',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.fromLTRB(10, 15, 10, 10),
-              height: 150,
-              child: Row(
-                children: [
-
-                  SizedBox(
-                    width: 20,
-                  ),
-
-                ],
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.home_filled,
-                          color: Colors.white,
-                          size: 30,
-                        )),
-                    //SizedBox(height: 2,),
-                    Text(
-                      'Home',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.search,
-                          color: Colors.white,
-                          size: 30,
-                        )),
-                    //SizedBox(height: 2,),
-                    Text(
-                      'Search',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-                Column(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.my_library_music_outlined,
-                          color: Colors.white,
-                          size: 30,
-                        )),
-                    //SizedBox(height: 2,),
-                    Text(
-                      'Your library',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                )
-              ],
-            )
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceAround,
+            //   children: [
+            //     Column(
+            //       children: [
+            //         IconButton(
+            //             onPressed: () {},
+            //             icon: Icon(
+            //               Icons.home_filled,
+            //               color: Colors.white,
+            //               size: 30,
+            //             )),
+            //         //SizedBox(height: 2,),
+            //         Text(
+            //           'Home',
+            //           style: TextStyle(
+            //             color: Colors.white,
+            //           ),
+            //         )
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         IconButton(
+            //             onPressed: () {},
+            //             icon: Icon(
+            //               Icons.search,
+            //               color: Colors.white,
+            //               size: 30,
+            //             )),
+            //         //SizedBox(height: 2,),
+            //         Text(
+            //           'Search',
+            //           style: TextStyle(
+            //             color: Colors.white,
+            //           ),
+            //         )
+            //       ],
+            //     ),
+            //     Column(
+            //       children: [
+            //         IconButton(
+            //             onPressed: () {},
+            //             icon: Icon(
+            //               Icons.my_library_music_outlined,
+            //               color: Colors.white,
+            //               size: 30,
+            //             )),
+            //         //SizedBox(height: 2,),
+            //         Text(
+            //           'Your library',
+            //           style: TextStyle(
+            //             color: Colors.white,
+            //           ),
+            //         )
+            //       ],
+            //     )
+            //   ],
+            // )
           ],
         ),
       ),
