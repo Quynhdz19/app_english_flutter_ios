@@ -17,7 +17,9 @@ class _LoginState extends State<Login> {
   final name = TextEditingController();
   final pass = TextEditingController();
   var url = 'http://localhost/api/login';
-  void login(username, password) async {
+  void login(BuildContext context, username, password) async {
+    print('username' + username);
+    print('pass'+ password);
     try {
       // Send POST request to the API
       var response = await http.post(
@@ -137,7 +139,7 @@ class _LoginState extends State<Login> {
                           builder: (context) {
                             return TextButton(
                                 onPressed: (){
-                                    login(name.text, pass.text);
+                                    login(context, name.text, pass.text);
                                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                                 },
                                 style: TextButton.styleFrom(
