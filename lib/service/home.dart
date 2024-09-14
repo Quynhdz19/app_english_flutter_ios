@@ -95,11 +95,7 @@ class Home extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(5))),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/cat1.jpg',
-                              width: 40,
-                              height: 40,
-                            ),
+
                             SizedBox(
                               width: 9,
                             ),
@@ -126,11 +122,7 @@ class Home extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5))),
                       child: Row(
                         children: [
-                          Image.asset(
-                            'assets/cat1.jpg',
-                            width: 40,
-                            height: 40,
-                          ),
+
                           SizedBox(
                             width: 9,
                           ),
@@ -162,11 +154,7 @@ class Home extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(5))),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/music1.jpg',
-                              width: 40,
-                              height: 40,
-                            ),
+
                             SizedBox(
                               width: 9,
                             ),
@@ -193,11 +181,7 @@ class Home extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5))),
                       child: Row(
                         children: [
-                          Image.asset(
-                            'assets/music2.jpg',
-                            width: 40,
-                            height: 40,
-                          ),
+
                           SizedBox(
                             width: 9,
                           ),
@@ -229,11 +213,7 @@ class Home extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(5))),
                         child: Row(
                           children: [
-                            Image.asset(
-                              'assets/music3.jpg',
-                              width: 40,
-                              height: 40,
-                            ),
+
                             SizedBox(
                               width: 9,
                             ),
@@ -260,11 +240,7 @@ class Home extends StatelessWidget {
                               borderRadius: BorderRadius.circular(5))),
                       child: Row(
                         children: [
-                          Image.asset(
-                            'assets/music4.jpg',
-                            width: 40,
-                            height: 40,
-                          ),
+
                           SizedBox(
                             width: 9,
                           ),
@@ -368,13 +344,6 @@ class Home extends StatelessWidget {
                           )
                         ],
                       )),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Image.asset(
-                      'assets/cat1.jpg',
-                      height: 170,
-                    ),
-                  ),
                   Positioned(
                     left: 5,
                     top: 140,
@@ -405,17 +374,11 @@ class Home extends StatelessWidget {
               height: 150,
               child: Row(
                 children: [
-                  Image.asset(
-                    'assets/sobin1.jpg',
-                    fit: BoxFit.cover,
-                  ),
+
                   SizedBox(
                     width: 20,
                   ),
-                  Image.asset(
-                    'assets/denvau.jpg',
-                    fit: BoxFit.cover,
-                  ),
+
                 ],
               ),
             ),
