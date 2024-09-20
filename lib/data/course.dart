@@ -1,4 +1,4 @@
-class Album{
+class Course{
   int ?id;
   String ?user_id;
   String ?name_course;
@@ -6,14 +6,14 @@ class Album{
   String ?updated_at;
 
 
-  Album(
+  Course(
       {this.id,
       this.user_id,
       this.name_course,
       this.created_at,
       this.updated_at});
 
-  Album.fromJson(Map<String,dynamic> json){
+  Course.fromJson(Map<String,dynamic> json){
     id=json['id'];
     user_id=json['user_id'];
     name_course=json['name_course'];

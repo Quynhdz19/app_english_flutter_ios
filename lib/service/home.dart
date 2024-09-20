@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../data/album.dart';
-import '../data/fetchalbum.dart';
+import '../data/course.dart';
+import '../data/fetchcourse.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -11,16 +11,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  List<Album> _albums = [];
-  List<Album> _allAlbums = []; // Lưu trữ danh sách gốc
+  List<Course> _courses = [];
+  List<Course> _allCourses = []; // Lưu trữ danh sách gốc
 
   @override
   void initState() {
     super.initState();
-    fetchAlbum().then((value) {
+    fetchCourse().then((value) {
       setState(() {
-        _albums = value; // Gán giá trị ban đầu cho cả 2 danh sách
-        _allAlbums = value;
+        _courses = value; // Gán giá trị ban đầu cho cả 2 danh sách
+        _allCourses = value;
       });
     });
   }
@@ -52,7 +52,7 @@ class _HomeState extends State<Home> {
                   text = text.toLowerCase();
                   setState(() {
                     // Dùng danh sách gốc để lọc
-                    _albums = _allAlbums.where((album) {
+                    _courses = _allCourses.where((album) {
                       var title = album.name_course?.toLowerCase() ?? '';
                       return title.contains(text);
                     }).toList();
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                   mainAxisSpacing: 10.0,
                   childAspectRatio: 3 / 2,
                 ),
-                itemCount: _albums.length,
+                itemCount: _courses.length,
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
                     child: Padding(
@@ -77,14 +77,14 @@ class _HomeState extends State<Home> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            _albums[index].id.toString(),
+                            _courses[index].id.toString(),
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold),
                           ),
                           Text(
-                            _albums[index].name_course ?? '',
+                            _courses[index].name_course ?? '',
                             style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 15,
