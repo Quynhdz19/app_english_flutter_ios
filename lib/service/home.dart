@@ -72,25 +72,27 @@ class _HomeState extends State<Home> {
                 itemBuilder: (BuildContext context, int index) {
                   return Card(
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 32, 16, 32),
+                      padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        //crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            _courses[index].id.toString(),
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold),
+                          Image.network(
+                              "https://cdn.tgdd.vn/Files/2022/06/05/1437445/cach-dang-ky-khoa-hoc-mien-phi-tren-moon-10_1280x720-800-resize.jpg",
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                            height: 100,
                           ),
-                          Text(
-                            _courses[index].name_course ?? '',
-                            style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
+                          Align(
+                            alignment: Alignment.bottomCenter,
+                            child: Text(
+                              _courses[index].name_course ?? '',
+                              style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold),
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           )
                         ],
                       ),

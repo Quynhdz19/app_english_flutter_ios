@@ -9,10 +9,10 @@ Future<List<Course>> fetchCourse() async {
   List<Course> courses = [];
 
   if (response.statusCode == 200) {
-    var albumJsonList = json.decode(response.body) as List<dynamic>; // Giải mã JSON thành danh sách động
+    var courseJsonList = json.decode(response.body) as List<dynamic>; // Giải mã JSON thành danh sách động
 
-    for (var albumJson in albumJsonList) { // Đổi tên biến để dễ hiểu hơn
-      courses.add(Course.fromJson(albumJson));
+    for (var courseJson in courseJsonList) { // Đổi tên biến để dễ hiểu hơn
+      courses.add(Course.fromJson(courseJson));
     }
   }
   return courses;
