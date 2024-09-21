@@ -59,9 +59,9 @@ class _LoginState extends State<Login> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 50),
+                    const SizedBox(height: 50),
                     Container(
-                        margin: EdgeInsets.fromLTRB(20, 50, 20, 0),
+                        margin: const EdgeInsets.fromLTRB(20, 50, 20, 0),
                         alignment: Alignment.center,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
@@ -71,8 +71,8 @@ class _LoginState extends State<Login> {
                           ),
                         )
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
                       child: Text(
                         'Hello',
                         style: TextStyle(
@@ -81,8 +81,8 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0,0, 2),
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(20, 0,0, 2),
                       child: Text(
                         'Wellcome Back',
                         style: TextStyle(
@@ -92,11 +92,11 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 10),
                       child: TextFormField(
                         controller: name,
-                        style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black),
-                        decoration: InputDecoration(
+                        style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black),
+                        decoration: const InputDecoration(
 
                             hintText: 'USERNAME',
                             hintStyle: TextStyle(color: Colors.black54,fontSize: 15)
@@ -106,15 +106,15 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
                       child: Stack(
                         alignment: Alignment.centerRight,
                         children: [
                           TextFormField(
                             controller: pass,
-                            style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black),
+                            style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black),
                             obscureText: !_showpass,
-                            decoration: InputDecoration(
+                            decoration: const InputDecoration(
 
                                 labelText: 'PASSWORD',
                                 labelStyle: TextStyle(color: Colors.black54,fontSize: 15)
@@ -134,7 +134,7 @@ class _LoginState extends State<Login> {
 
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                      margin: const EdgeInsets.fromLTRB(30, 10, 30, 0),
                       child: Builder(
                           builder: (context) {
                             return TextButton(
@@ -146,7 +146,7 @@ class _LoginState extends State<Login> {
                                   backgroundColor: Colors.cyan,
                                   foregroundColor: Colors.white,
                                 ),
-                                child: Row(
+                                child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text('SIGN IN',style: TextStyle(fontSize: 25),),
@@ -157,7 +157,7 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(30, 40, 30, 0),
+                      margin: const EdgeInsets.fromLTRB(30, 40, 30, 0),
                       alignment: Alignment.center,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -165,7 +165,7 @@ class _LoginState extends State<Login> {
                           Builder(
                               builder: (context) {
                                 return GestureDetector(
-                                    child: Text(
+                                    child: const Text(
                                       'Sign up?',
                                       style: TextStyle(
                                         fontSize: 20,
@@ -181,7 +181,7 @@ class _LoginState extends State<Login> {
                           Builder(
                               builder: (context) {
                                 return GestureDetector(
-                                  child: Text(
+                                  child: const Text(
                                     'Forget Password?',
                                     style: TextStyle(
                                       fontSize: 20,

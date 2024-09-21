@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Center(
+          title: const Center(
             child: Text(
               'Reading Json',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextField(
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Search...',
                   hintStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
@@ -62,7 +62,7 @@ class _HomeState extends State<Home> {
             ),
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
                   crossAxisSpacing: 10.0,
                   mainAxisSpacing: 10.0,
@@ -86,7 +86,7 @@ class _HomeState extends State<Home> {
                             alignment: Alignment.bottomCenter,
                             child: Text(
                               _courses[index].name_course ?? '',
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.grey,
                                   fontSize: 15,
                                   fontWeight: FontWeight.bold),

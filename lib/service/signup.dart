@@ -62,8 +62,8 @@ class _SignupState extends State<Signup> {
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: 100), // Khoảng cách phía trên
-                    ListTile(
+                    const SizedBox(height: 100), // Khoảng cách phía trên
+                    const ListTile(
                       leading: Icon(
                         Icons.account_circle,
                         size: 60,
@@ -77,14 +77,14 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                       child: TextFormField(
                         controller: username,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                         decoration: InputDecoration(
                             hintText: 'USERNAME',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black54,
                             ),
                             //filled: true,
@@ -96,14 +96,14 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                       child: TextFormField(
                         controller: email,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                         decoration: InputDecoration(
                             hintText: 'Email',
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                               color: Colors.black54,
                             ),
                             //filled: true,
@@ -115,20 +115,20 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                       child: Stack(
                         alignment: Alignment.centerRight,
                         children: [
                           TextFormField(
                             controller: password,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black),
                             obscureText: !_showpass,
                             decoration: InputDecoration(
                                 hintText: 'PASSWORD',
-                                hintStyle: TextStyle(
+                                hintStyle: const TextStyle(
                                     color: Colors.black54, fontSize: 15),
                                 // filled: true,
                                 // fillColor: Colors.cyanAccent,
@@ -147,20 +147,20 @@ class _SignupState extends State<Signup> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(20, 20, 20, 0),
+                      margin: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                       child: Stack(
                         alignment: Alignment.centerRight,
                         children: [
                           TextFormField(
                             controller: confirmPass,
-                            style: TextStyle(
+                            style: const TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.w500,
                                 color: Colors.black),
                             obscureText: !_showpass,
                             decoration: InputDecoration(
                                 hintText: 'CONFIRM PASSWORD',
-                                hintStyle: TextStyle(
+                                hintStyle: const TextStyle(
                                     color: Colors.black54, fontSize: 15),
                                 // filled: true,
                                 // fillColor: Colors.cyanAccent,
@@ -190,7 +190,7 @@ class _SignupState extends State<Signup> {
                             style: TextButton.styleFrom(
                               backgroundColor: Colors.grey,
                             ),
-                            child: Text(
+                            child: const Text(
                               'Sign up',
                               style: TextStyle(color: Colors.black, fontSize: 30),
                             )),
