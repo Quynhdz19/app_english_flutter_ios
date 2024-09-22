@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_v1/service/detail_course.dart';
 
 import '../data/course.dart';
 import '../data/fetchcourse.dart';
@@ -33,7 +34,7 @@ class _HomeState extends State<Home> {
         appBar: AppBar(
           title: const Center(
             child: Text(
-              'Reading Json',
+              'List Courses',
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
           ),
@@ -41,12 +42,18 @@ class _HomeState extends State<Home> {
         ),
         body: Column(
           children: [
-            Padding(
+            Container(
               padding: const EdgeInsets.all(8.0),
+              // decoration: BoxDecoration(
+              //   borderRadius: BorderRadius.circular(10),
+              // ),
               child: TextField(
-                decoration: const InputDecoration(
+                decoration:  InputDecoration(
                   hintText: 'Search...',
-                  hintStyle: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  hintStyle: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10)
+                  ),
                 ),
                 onChanged: (text) {
                   text = text.toLowerCase();
@@ -70,33 +77,43 @@ class _HomeState extends State<Home> {
                 ),
                 itemCount: _courses.length,
                 itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
-                      child: Column(
-                        //crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.network(
-                              "https://cdn.tgdd.vn/Files/2022/06/05/1437445/cach-dang-ky-khoa-hoc-mien-phi-tren-moon-10_1280x720-800-resize.jpg",
-                            fit: BoxFit.cover,
-                            width: double.infinity,
-                            height: 100,
-                          ),
-                          Align(
-                            alignment: Alignment.bottomCenter,
-                            child: Text(
-                              _courses[index].name_course ?? '',
-                              style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.bold),
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
+                  return GestureDetector(
+                    child: Card(
+
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(5, 5, 5, 5),
+                        child: Column(
+                          //crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.network(
+                                "https://cdn.tgdd.vn/Files/2022/06/05/1437445/cach-dang-ky-khoa-hoc-mien-phi-tren-moon-10_1280x720-800-resize.jpg",
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                              height: 100,
                             ),
-                          )
-                        ],
+                            Align(
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                _courses[index].name_course ?? '',
+                                style: const TextStyle(
+                                    color: Colors.grey,
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold),
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
+
                     ),
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(
+                          builder: (context) => DetailCourse(course: _courses[index],),
+                      )
+                      );
+                    },
                   );
                 },
               ),
