@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../data/course.dart';
+import '../../data/course.dart';
 
 class DetailCourse extends StatelessWidget {
   final Course course; // Đây là đối tượng course được truyền vào

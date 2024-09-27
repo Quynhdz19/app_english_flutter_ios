@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_v1/service/detail_course.dart';
+import 'package:flutter_v1/service/Detailcourses/detail_course.dart';
 
-import '../data/course.dart';
-import '../data/fetchcourse.dart';
+import '../../data/course.dart';
+import '../../data/fetchcourse.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});

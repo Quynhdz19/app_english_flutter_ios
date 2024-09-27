@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_v1/service/home.dart';
-import 'package:flutter_v1/service/signup.dart';
+import 'package:flutter_v1/service/login/home.dart';
+import 'package:flutter_v1/service/login/signup.dart';
 import 'package:http/http.dart' as http;
 
 
