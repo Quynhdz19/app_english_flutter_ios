@@ -37,7 +37,8 @@ class _YtbPlayerState extends State<YtbPlayer> {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             appBar: AppBar(
-              title: const Text('Youtube Player'),
+              backgroundColor: Colors.amber,
+              title: Center(child: const Text('Youtube Player')),
             ),
             body: player, // Trả về player tại đây
           ),
