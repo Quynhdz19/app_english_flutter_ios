@@ -21,10 +21,3 @@ class Course{
     updated_at=json['updated_at'];
   }
 }
-// {
-// "id": 1,
-// "user_id": "1",
-// "name_course": "Lập trình 1",
-// "created_at": "2024-09-14T09:21:27.000000Z",
-// "updated_at": "2024-09-14T09:21:27.000000Z"
-// },

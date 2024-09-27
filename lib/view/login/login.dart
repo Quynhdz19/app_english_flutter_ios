@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_v1/service/login/home.dart';
-import 'package:flutter_v1/service/login/signup.dart';
+// import 'package:flutter_v1/';
 import 'package:http/http.dart' as http;
 
 
@@ -30,12 +29,12 @@ class _LoginState extends State<Login> {
         },
       );
 
-      if (response.statusCode == 200) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => Home()),
-        );
-      }
+      // if (response.statusCode == 200) {
+      //   Navigator.push(
+      //     context,
+      //     MaterialPageRoute(builder: (context) => Home()),
+      //   );
+      // }
     } catch (e) {
       // Handle any errors that occur during the POST request
       print('Error occurred during signup: $e');
@@ -173,7 +172,7 @@ class _LoginState extends State<Login> {
                                       ),
                                     ),
                                     onTap: (){
-                                       Navigator.push(context, MaterialPageRoute(builder: (context) => Signup() ));
+                                       // Navigator.push(context, MaterialPageRoute(builder: (context) => Signup() ));
                                     }
                                 );
                               }
