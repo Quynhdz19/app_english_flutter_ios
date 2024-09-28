@@ -1,21 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-class YtbPlayer extends StatefulWidget {
-  const YtbPlayer({super.key});
+import '../../modal/video.dart';
+
+class DetailVideo extends StatefulWidget {
+  const DetailVideo({super.key, required this.video});
+  final Video video;
 
   @override
-  State<YtbPlayer> createState() => _YtbPlayerState();
+  State<DetailVideo> createState() => _DetailVideo();
 }
 
-class _YtbPlayerState extends State<YtbPlayer> {
+class _DetailVideo extends State<DetailVideo> {
   YoutubePlayerController? _controller;
-
   @override
   void initState() {
     super.initState();
+    // Truy cập video URL từ widget.video
+    String url = widget.video.url_video!;
+
+    // Tìm vị trí của 'v=' trong URL
+    int startIndex = url.indexOf('v=') + 2;
+
+    // Trích xuất đoạn mã video sau 'v='
+    String videoId = url.substring(startIndex);
     _controller = YoutubePlayerController(
-      initialVideoId: 'swnVgzm38r4', // Chỉ cần ID video
+      initialVideoId: videoId, // Chỉ cần ID modal
       flags: const YoutubePlayerFlags(
         autoPlay: false,
         mute: false, // Có thể thay đổi theo nhu cầu
