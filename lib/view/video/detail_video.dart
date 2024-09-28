@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_v1/view/video/page_list_video.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../../modal/video.dart';
@@ -47,8 +48,15 @@ class _DetailVideo extends State<DetailVideo> {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             appBar: AppBar(
+              leading: IconButton(
+                  onPressed: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PageListVideo()));
+                  },
+                  icon: const Icon(Icons.arrow_back)
+              )
+              ,
               backgroundColor: Colors.amber,
-              title: Center(child: const Text('Youtube Player')),
+              title: Center(child: const Text('Video')),
             ),
             body: player, // Trả về player tại đây
           ),
