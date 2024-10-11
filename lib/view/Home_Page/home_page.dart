@@ -21,13 +21,14 @@ class _HomePageState extends State<HomePage> {
       debugShowCheckedModeBanner:  false ,
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.lightBlue,
+            backgroundColor: Colors.lightBlue,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
             },
           ),
           title: const Text('Wellcome Back!',style: TextStyle(fontSize: 18),),
+          centerTitle: true,
           actions: [
             IconButton(
               icon: const Icon(Icons.add_alert),
