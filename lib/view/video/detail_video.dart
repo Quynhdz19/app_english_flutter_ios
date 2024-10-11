@@ -17,7 +17,7 @@ class _DetailVideo extends State<DetailVideo> {
   @override
   void initState() {
     super.initState();
-    // Truy cập video URL từ widget.video
+    // Truy cập video URL từ home_page_component.video
     String url = widget.video.url_video!;
 
     // Tìm vị trí của 'v=' trong URL
