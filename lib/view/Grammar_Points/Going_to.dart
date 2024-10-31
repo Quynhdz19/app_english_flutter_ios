@@ -19,11 +19,11 @@ class GoingToScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Going to'),
+        title: Text('Going to',style: TextStyle(fontSize: 30.0)),
         backgroundColor: Colors.blue,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -36,7 +36,7 @@ class GoingToScreen extends StatelessWidget {
             Text(
               'Usage',
               style: TextStyle(
-                fontSize: 20.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -74,7 +74,7 @@ class GoingToScreen extends StatelessWidget {
             Text(
               'How to use it',
               style: TextStyle(
-                fontSize: 40.0,
+                fontSize: 30.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
