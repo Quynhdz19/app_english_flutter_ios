@@ -1,21 +1,34 @@
-import 'package:http/http.dart'as http;
-class BaseService{
+import 'package:http/http.dart' as http;
+
+class BaseServices{
   final String baseUrl='';
-  Future<http.Response> getRequest(String endpoint) async{
-    final uri=Uri.parse('$baseUrl/$endpoint');
-    final response=await http.get(uri);
-    _handleErrors(response);
+  String ? token;
+  Map<String,String> _getHeaders(){
+    return {
+      'Content-Type':'application/json',
+      if(token!=null) 'Authorization':'Bearer $token',
+    };
+  }
+  Map<String,String> _postHeaders(){
+    return {
+      'Content-Type':'application/x-www-form-urlencoded',
+      if(token!=null) 'Authorization':'Bearer $token',
+    };
+  }
+
+  Future<http.Response> getRequest(String endpoint)async{
+    final String url= 'baseUrl/$endpoint';
+    final response=await http.get(Uri.parse(url),headers: _getHeaders());
+    return  response;
+  }
+  Future<http.Response> postRequest(String endpoint,Map<String,dynamic>body) async{
+    final String url ='baseUrl/$endpoint';
+    final response= await http.post(
+      Uri.parse(url),
+      headers: _postHeaders(),
+      body: body
+    );
     return response;
   }
-  Future<http.Response> postRequest(String endpoint, Map<String, dynamic> body) async {
-    final url = Uri.parse('$baseUrl/$endpoint');
-    final response = await http.post(url, body: body);
-    _handleErrors(response);
-    return response;
-  }
-  void _handleErrors(http.Response response){
-    if(response.statusCode!=200){
-      throw Exception('Error: ${response.statusCode}');
-    }
-  }
+
 }

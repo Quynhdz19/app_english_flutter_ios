@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_v1/view/login/signup.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -47,10 +48,16 @@ class _LoginState extends State<Login> {
       home: Scaffold(
           body: Stack(
             children: [
-              Image.asset('assets/nen.jpg',
+              Container(
                 width: double.infinity,
                 height: double.infinity,
-                fit: BoxFit.cover,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Colors.white70,Colors.lightBlueAccent],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter
+                  )
+                ),
               ),
               SingleChildScrollView(
                 child: Column(
@@ -63,28 +70,21 @@ class _LoginState extends State<Login> {
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(30),
                           child: Image.asset(
-                            'assets/music.jpg',
-                            fit: BoxFit.cover,
+                             'assets/iconapp.jpg',
+                            fit: BoxFit.cover
                           ),
                         )
                     ),
+
                     const Padding(
-                      padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-                      child: Text(
-                        'Hello',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(20, 0,0, 2),
-                      child: Text(
-                        'Wellcome Back',
-                        style: TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w500,
+                      padding: EdgeInsets.fromLTRB(20, 20,0, 2),
+                      child: Center(
+                        child: Text(
+                          'English App',
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.w500
+                          ),
                         ),
                       ),
                     ),
@@ -96,7 +96,7 @@ class _LoginState extends State<Login> {
                         decoration: const InputDecoration(
 
                             hintText: 'USERNAME',
-                            hintStyle: TextStyle(color: Colors.black54,fontSize: 15)
+                            hintStyle: TextStyle(color: Colors.black,fontSize: 15)
 
                         ),
 
@@ -104,34 +104,24 @@ class _LoginState extends State<Login> {
                     ),
                     Container(
                       margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                      child: Stack(
-                        alignment: Alignment.centerRight,
-                        children: [
-                          TextFormField(
-                            controller: pass,
-                            style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black),
-                            obscureText: !_showpass,
-                            decoration: const InputDecoration(
-
-                                labelText: 'PASSWORD',
-                                labelStyle: TextStyle(color: Colors.black54,fontSize: 15)
-
-                            ),
-
-                          ),
-                          GestureDetector(
-                              onTap: showornot,
-                              child: Icon(
-                                  _showpass? Icons.visibility:Icons.visibility_off
-                              )
-                          )
-
-                        ],
+                      child: TextFormField(
+                        controller: pass,
+                        style: const TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black),
+                        obscureText: !_showpass,
+                        decoration: InputDecoration(
+                            hintText: 'PASSWORD',
+                            hintStyle: const TextStyle(color: Colors.black,fontSize: 15),
+                            suffixIcon: IconButton(
+                                onPressed: showornot,
+                                icon: Icon(
+                                    _showpass? Icons.visibility:Icons.visibility_off
+                                )
+                            )
+                        ),
                       ),
-
                     ),
                     Container(
-                      margin: const EdgeInsets.fromLTRB(30, 10, 30, 0),
+                      margin: const EdgeInsets.fromLTRB(30, 20, 30, 0),
                       child: Builder(
                           builder: (context) {
                             return TextButton(
@@ -140,13 +130,13 @@ class _LoginState extends State<Login> {
                                    // Navigator.push(context, MaterialPageRoute(builder: (context) => Home()));
                                 },
                                 style: TextButton.styleFrom(
-                                  backgroundColor: Colors.cyan,
+                                  backgroundColor: Colors.pink,
                                   foregroundColor: Colors.white,
                                 ),
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text('SIGN IN',style: TextStyle(fontSize: 25),),
+                                    Text('Login',style: TextStyle(fontSize: 25),),
                                   ],
                                 )
                             );
@@ -170,7 +160,7 @@ class _LoginState extends State<Login> {
                                       ),
                                     ),
                                     onTap: (){
-                                       // Navigator.push(context, MaterialPageRoute(builder: (context) => Signup() ));
+                                       Navigator.push(context, MaterialPageRoute(builder: (context) => const Signup() ));
                                     }
                                 );
                               }
@@ -183,7 +173,7 @@ class _LoginState extends State<Login> {
                                     style: TextStyle(
                                       fontSize: 20,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.cyan,
+                                      color: Colors.black,
                                     ),
                                   ),
                                   onTap: (){

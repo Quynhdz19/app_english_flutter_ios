@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login.dart'; // Kiểm tra nếu login.dart đã được import chính xác.
+import 'login.dart';
 import 'package:http/http.dart' as http;
 
 class Signup extends StatefulWidget {
@@ -11,7 +11,6 @@ class Signup extends StatefulWidget {
 
 class _SignupState extends State<Signup> {
   bool _showpass = false;
-
   final username = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
@@ -50,30 +49,46 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.lightBlueAccent,
+          foregroundColor: Colors.white,
+          leading: IconButton(
+            icon: const Icon(Icons.arrow_back,size: 24,),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const Login()));
+            },
+          ),
+          title: const Text('Registration',style: TextStyle(fontSize: 24),),
+          centerTitle: true,
+        ),
           body: Stack(
             children: [
-              Image.asset(
-                'assets/nen.jpg',
-                fit: BoxFit.cover,
+              Container(
                 width: double.infinity,
                 height: double.infinity,
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                      colors: [Colors.white70,Colors.lightBlueAccent],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter
+                  )
+                ),
               ),
               SingleChildScrollView(
+
                 child: Column(
                   children: [
-                    const SizedBox(height: 100), // Khoảng cách phía trên
-                    const ListTile(
-                      leading: Icon(
-                        Icons.account_circle,
-                        size: 60,
-                      ),
-                      title: Text(
-                        'Register',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black,
-                            fontSize: 40),
+                    
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(30),
+                        child: Image.asset(
+                          'assets/iconapp.jpg',
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
                     Container(
@@ -189,7 +204,7 @@ class _SignupState extends State<Signup> {
 
                             },
                             style: TextButton.styleFrom(
-                              backgroundColor: Colors.grey,
+                              backgroundColor: Colors.orange,
                             ),
                             child: const Text(
                               'Sign up',

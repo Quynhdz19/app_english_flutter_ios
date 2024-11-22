@@ -27,9 +27,9 @@ class DetailCourse extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                const Text(
                   'Name of Course: ',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold
                   ),
                 ),
@@ -41,17 +41,11 @@ class DetailCourse extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 Text(
                   'UserID:',
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.bold
-                  ),
-                ),
-                Text(
-                  course.user_id !,
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold
                   ),
                 ),
@@ -59,9 +53,9 @@ class DetailCourse extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                const Text(
                   'Created at: ',
-                  style: const TextStyle(
+                  style: TextStyle(
                       fontSize: 20, fontWeight: FontWeight.bold
                   ),
                 ),
