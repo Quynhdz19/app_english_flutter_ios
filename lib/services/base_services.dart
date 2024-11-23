@@ -31,4 +31,13 @@ class BaseServices{
     return response;
   }
 
+  // Future<http.Response> deleteRequest(String endpoint, Map<String, dynamic> body) async {
+  //   final String url = 'baseUrl/$endpoint';
+  //   final response =await http.delete(
+  //     Uri.parse(url),
+  //     headers: _postHeaders(),
+  //     body: body
+  //   );
+  //   return response;
+  // }
 }

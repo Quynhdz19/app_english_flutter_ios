@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_v1/view/video/page_list_video.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
-import '../../modal/video.dart';
+import '../../model/video.dart';
+
 
 class DetailVideo extends StatefulWidget {
   const DetailVideo({super.key, required this.video});

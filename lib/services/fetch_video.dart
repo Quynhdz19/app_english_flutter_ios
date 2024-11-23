@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:flutter_v1/modal/video.dart';
 import 'package:http/http.dart' as http;
+
+import '../model/video.dart';
 
 
 Future<List<Video>> fetchVideo() async {

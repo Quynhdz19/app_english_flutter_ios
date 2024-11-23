@@ -1,27 +1,20 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 
-class lesson extends StatelessWidget {
+
+class Lesson extends StatefulWidget {
+  const Lesson({super.key});
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: LessonsPage(),
-    );
-  }
+  State<Lesson> createState() => _LessonState();
 }
 
-class LessonsPage extends StatelessWidget {
+class _LessonState extends State<Lesson> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Lessons",style: TextStyle(color: Colors.white),),
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-      ),
       body: ListView(
-        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
         children: [
           _buildLessonCard(
             title: "Learn vocabularies by topic",
@@ -61,34 +54,8 @@ class LessonsPage extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 20,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Learn',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.gamepad),
-            label: 'Game',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            backgroundColor: Colors.blue,
-          )
-        ],
-      ),
     );
   }
-
 
   Widget _buildLessonCard({
     required String title,
@@ -97,10 +64,10 @@ class LessonsPage extends StatelessWidget {
   }) {
     return Card(
       elevation: 2,
-      margin: EdgeInsets.symmetric(vertical: 8),
+      margin: const EdgeInsets.symmetric(vertical: 8),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: ListTile(
-        contentPadding: EdgeInsets.all(10),
+        contentPadding: const EdgeInsets.all(10),
         leading: Image.network(
           imageUrl,
           width: 60,
@@ -109,11 +76,11 @@ class LessonsPage extends StatelessWidget {
         ),
         title: Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         subtitle: Text(
           subtitle,
-          style: TextStyle(fontSize: 14, color: Colors.grey),
+          style: const TextStyle(fontSize: 14, color: Colors.grey),
         ),
         onTap: () {
           // Tính năng thêm sự kiện khi nhấn vào mỗi mục bài học

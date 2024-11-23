@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_v1/view/courses/detail_course.dart';
 
-import '../../modal/course.dart';
+import '../../model/course.dart';
 import '../../services/fetch_course.dart';
 
 class Home extends StatefulWidget {

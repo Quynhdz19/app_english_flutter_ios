@@ -1,30 +1,12 @@
 import 'package:flutter/material.dart';
 
 
-class profile extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: ProfilePage(),
-    );
-  }
-}
+class Profile extends StatelessWidget {
+  const Profile({super.key});
 
-class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Profile"),
-        backgroundColor: Colors.blue,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.nightlight_round),
-            onPressed: () {
-            },
-          ),
-        ],
-      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -34,34 +16,34 @@ class ProfilePage extends StatelessWidget {
               Center(
                 child: Column(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 50,
                       backgroundColor: Colors.blue,
                       child: Icon(Icons.person, size: 50, color: Colors.white),
                     ),
-                    SizedBox(height: 10),
-                    Text(
+                    const SizedBox(height: 10),
+                    const Text(
                       'Nguyễn Quỳnh',
                       style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       'quynhnguyen@gmail.com',
                       style: TextStyle(color: Colors.grey, fontSize: 16),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
                         // Tính năng chỉnh sửa hồ sơ ;
                       },
                       child: Text("Edit profile"),
                       style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                       ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -69,18 +51,18 @@ class ProfilePage extends StatelessWidget {
                   _buildInfoCard("100 Points", "No Rank", Icons.star_border),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
               // Các tính năng trong profile
               ListTile(
-                leading: Icon(Icons.school, color: Colors.blue),
-                title: Text("Learning process"),
-                trailing: Icon(Icons.arrow_forward_ios),
+                leading: const Icon(Icons.school, color: Colors.blue),
+                title: const Text("Learning process"),
+                trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {
                   // Điều hướng đến trang Learning process
                 },
               ),
-              Divider(),
+              const Divider(),
               ListTile(
                 leading: Icon(Icons.favorite, color: Colors.red),
                 title: Text("Favorite Lessons"),
@@ -89,7 +71,7 @@ class ProfilePage extends StatelessWidget {
                   // Điều hướng đến trang Favorite Lessons
                 },
               ),
-              Divider(),
+              const Divider(),
               ListTile(
                 leading: Icon(Icons.badge, color: Colors.orange),
                 title: Text("Achievements & Badges"),
@@ -121,31 +103,6 @@ class ProfilePage extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 20,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Learn',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.gamepad),
-            label: 'Game',
-            backgroundColor: Colors.blue,
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-            backgroundColor: Colors.blue,
-          )
-        ],
-      ),
     );
   }
 
@@ -153,7 +110,7 @@ class ProfilePage extends StatelessWidget {
   Widget _buildInfoCard(String title, String value, IconData icon) {
     return Container(
       width: 150,
-      padding: EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         color: Colors.blue.shade50,
@@ -168,14 +125,14 @@ class ProfilePage extends StatelessWidget {
       child: Column(
         children: [
           Icon(icon, size: 40, color: Colors.blue),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           Text(
             title,
-            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           Text(
             value,
-            style: TextStyle(fontSize: 24, color: Colors.blue),
+            style: const TextStyle(fontSize: 24, color: Colors.blue),
           ),
         ],
       ),

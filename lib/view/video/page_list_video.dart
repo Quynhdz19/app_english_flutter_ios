@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_v1/modal/video.dart';
 
+import '../../model/video.dart';
 import '../../services/fetch_video.dart';
 import 'detail_video.dart';
 

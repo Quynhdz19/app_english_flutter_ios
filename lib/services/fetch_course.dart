@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../modal/course.dart';
+import '../model/course.dart';
 
 Future<List<Course>> fetchCourse() async {
   var url = "http://54.165.243.77/api/getCourses";
